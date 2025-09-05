@@ -1,31 +1,64 @@
-Step 1 — Create a New Table
-Create a new table in lab_crud named courses.
-Include fields such as: id (auto-increment primary key), code (unique course code), title, units, and created_at.
-Verify the table structure in phpMyAdmin or the MySQL CLI.
-Step 2 — Build a New Controller
-Following the same pattern as your studentController, create a new controller file for courses. It should include all five basic operations:
+3ISA – Laboratory Activity #2: CRUD API with Express.js and MySQL
 
-Create (POST)
-Read All (GET)
-Read One (GET by ID)
-Update (PUT)
-Delete (DELETE)
-Step 3 — Add Routes
-Define a new route file, just like studentRoutes, but this time for courses. Mount it in your server.js under /api/courses.
+In this lab, I developed a basic RESTful API using Express.js as the backend framework and MySQL for data persistence. The API will manage student and course information, showcasing the four main CRUD operations: Create, Read, Update, and Delete. The activity will guide you in applying clean project organization, database connectivity, and API testing with Postman.
 
-Step 4 — Test in Postman
-Perform a full CRUD cycle for courses:
+Step 1: Database Setup
 
-POST a new course (e.g., code: CS101, title: Intro to CS, units: 3)
-GET all courses — confirm your new record appears
-GET by ID — confirm the details of a specific course
-PUT to update the course (e.g., change the title or units)
-DELETE the course by ID
-Step 5 — Push Your Project to GitHub
-Publish your work so it’s easy to share:
+Open MySQL and create a database named lab_crud.
+Inside it, define two tables:
+students → (id, name, age, course, created_at)
+courses → (id, code, title, units, created_at)
+Confirm your schema using either phpMyAdmin or the MySQL CLI.
 
-Initialize Git (if not already done): git init
-Add a .gitignore file to exclude node_modules and .env.
-Commit your changes with a clear message (e.g., “Added courses CRUD API”).
-Create a repository on GitHub and push your project.
-Include an .env.example file with placeholder values, but never upload your real .env.
+Step 2: Express Server Initialization
+
+Install and configure an Express.js project.
+Use a .env file to safely store MySQL connection credentials.
+When configured correctly, starting the server should display:
+🚀 Server running…
+✅ MySQL connected
+
+Step 3: Controllers
+
+Following the MVC(Model View Controller) -style structure, create two controllers that handle database logic:
+studentController.js → For all student-related CRUD functions
+courseController.js → For all course-related CRUD functions
+
+Each controller must implement:
+POST → Create a record
+GET (all) → Retrieve all records
+GET (by ID) → Retrieve one record
+PUT → Update an existing record
+DELETE → Remove a record
+
+Step 4: Routes
+
+Define separate route files:
+studentRoutes.js → mounted at /api/students
+courseRoutes.js → mounted at /api/courses
+Register these routes in your server.js so the API can serve both endpoints.
+
+Step 5: Postman Testing
+
+Using Postman, perform a complete CRUD cycle for both entities:
+Students
+POST /api/students → Add new student
+GET /api/students → View all students
+GET /api/students/:id → Fetch a single student
+PUT /api/students/:id → Edit student details
+DELETE /api/students/:id → Remove a student
+
+Courses
+POST /api/courses → Add new course
+GET /api/courses → View all courses
+GET /api/courses/:id → Fetch a single course
+PUT /api/courses/:id → Edit course details
+DELETE /api/courses/:id → Remove a course
+
+For Postman environment configure with {{baseUrl}} to simplify requests.
+
+Step 6: GitHub Submission
+Initialize a Git repository if not already done (git init).
+Add a .gitignore file to exclude node_modules/ and .env.
+Commit with a descriptive message (e.g., "Implemented CRUD API for students and courses").
+Provide an .env.example with placeholder credentials (never push your actual .env).
