@@ -1,8 +1,8 @@
-3ISA – Laboratory Activity #2: CRUD API with Express.js and MySQL
+**3ISA – Laboratory Activity #2: CRUD API with Express.js and MySQL**
 
 In this lab, I developed a basic RESTful API using Express.js as the backend framework and MySQL for data persistence. The API will manage student and course information, showcasing the four main CRUD operations: Create, Read, Update, and Delete. The activity will guide you in applying clean project organization, database connectivity, and API testing with Postman.
 
-Step 1: Database Setup
+**Step 1: Database Setup**
 
 Open MySQL and create a database named lab_crud.
 Inside it, define two tables:
@@ -10,7 +10,7 @@ students → (id, name, age, course, created_at)
 courses → (id, code, title, units, created_at)
 Confirm your schema using either phpMyAdmin or the MySQL CLI.
 
-Step 2: Express Server Initialization
+**Step 2: Express Server Initialization**
 
 Install and configure an Express.js project.
 Use a .env file to safely store MySQL connection credentials.
@@ -18,7 +18,7 @@ When configured correctly, starting the server should display:
 🚀 Server running…
 ✅ MySQL connected
 
-Step 3: Controllers
+**Step 3: Controllers**
 
 Following the MVC(Model View Controller) -style structure, create two controllers that handle database logic:
 studentController.js → For all student-related CRUD functions
@@ -31,14 +31,14 @@ GET (by ID) → Retrieve one record
 PUT → Update an existing record
 DELETE → Remove a record
 
-Step 4: Routes
+**Step 4: Routes**
 
 Define separate route files:
 studentRoutes.js → mounted at /api/students
 courseRoutes.js → mounted at /api/courses
 Register these routes in your server.js so the API can serve both endpoints.
 
-Step 5: Postman Testing
+**Step 5: Postman Testing**
 
 Using Postman, perform a complete CRUD cycle for both entities:
 Students
@@ -57,7 +57,7 @@ DELETE /api/courses/:id → Remove a course
 
 For Postman environment configure with {{baseUrl}} to simplify requests.
 
-Step 6: GitHub Submission
+**Step 6: GitHub Submission**
 Initialize a Git repository if not already done (git init).
 Add a .gitignore file to exclude node_modules/ and .env.
 Commit with a descriptive message (e.g., "Implemented CRUD API for students and courses").
