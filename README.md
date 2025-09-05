@@ -58,6 +58,7 @@ DELETE /api/courses/:id → Remove a course
 For Postman environment configure with {{baseUrl}} to simplify requests.
 
 **Step 6: GitHub Submission**
+
 Initialize a Git repository if not already done (git init).
 Add a .gitignore file to exclude node_modules/ and .env.
 Commit with a descriptive message (e.g., "Implemented CRUD API for students and courses").
